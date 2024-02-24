@@ -1,0 +1,42 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { PandaproxyService } from './pandaproxy.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { WelcomepageComponent } from './welcomepage/welcomepage.component';
+import { StorefrontpageComponent } from './storefrontpage/storefrontpage.component';
+import { ShoepageComponent } from './shoepage/shoepage.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    WelcomepageComponent,
+    StorefrontpageComponent,
+    ShoepageComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatTableModule,
+    MatSortModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule
+  ],
+  providers: [PandaproxyService, provideAnimationsAsync()],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
