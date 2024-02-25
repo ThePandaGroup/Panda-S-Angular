@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PandaproxyService } from './pandaproxy.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -18,12 +19,16 @@ import { WelcomepageComponent } from './welcomepage/welcomepage.component';
 import { StorefrontpageComponent } from './storefrontpage/storefrontpage.component';
 import { ShoepageComponent } from './shoepage/shoepage.component';
 
+
+import {MatCardModule} from '@angular/material/card';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     WelcomepageComponent,
     StorefrontpageComponent,
-    ShoepageComponent
+    ShoepageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ import { ShoepageComponent } from './shoepage/shoepage.component';
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [PandaproxyService, provideAnimationsAsync()],
   bootstrap: [AppComponent]

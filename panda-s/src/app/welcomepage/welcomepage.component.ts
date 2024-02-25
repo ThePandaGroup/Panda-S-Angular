@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcomepage',
   templateUrl: './welcomepage.component.html',
   styleUrl: './welcomepage.component.css'
 })
-export class WelcomepageComponent {
+export class WelcomepageComponent implements OnInit{
 
   items = [
     { imgSrc: './assets/airJordan1.png', title: 'Da Shoe', description: 'Let\'s say the shoe is a unique one' },
@@ -15,6 +15,7 @@ export class WelcomepageComponent {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

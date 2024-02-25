@@ -12,14 +12,12 @@ export class PandaproxyService {
     constructor(private httpClient: HttpClient) { }
     
 
-    // Needs to create some getters here...
-
-//     e.g. getListsIndex() {
-//     return this.httpClient.get<any[]>( this.hostUrl + 'json/lists.json');
-//   }
-
-//   getItems(index: string) {
-//     return this.httpClient.get( this.hostUrl + 'json/lists/' + index + '.json');
-//   }
+    getShoes() {
+      return this.httpClient.get(this.hostUrl + 'api/shoes');
+    }
+  
+    getShoe(id: number) {
+      return this.httpClient.get(this.hostUrl + 'api/shoes/${id}');
+    }
 
 }

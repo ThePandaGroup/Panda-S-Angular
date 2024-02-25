@@ -1,1 +1,56 @@
-<p>shoepage works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 my-5">
+        <div class="image-container" style="width: 100%; height: 300px;">
+          <img src="../../assets/airJordan1.png" alt="Product Image" class="img-fluid d-block" style="max-width: 100%; max-height: 100%;">
+        </div>
+      </div>
+      <div class="col-md-6 my-5">
+        <div class="row">
+          <div class="col-12">
+            <h2>{{ shoe.name }}</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>{{ shoe.price }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>{{ shoe.rating }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Quantity: 1</p>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary">Buy Now</button>
+            <button class="btn btn-secondary">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tabs for Product Description and Contact Seller -->
+    <ul class="nav nav-tabs nav-fill mb-3" id="productTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Product Description</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact Seller</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="productTabContent">
+      <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+        {{ shoe.description }}
+      </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        Email: {{ shoe.sellerEmail }}
+      </div>
+    </div>
+    <!-- Customer Reviews -->
+    <div class="my-3">
+      <!-- Reviews go here -->
+    </div>
+  </div>
