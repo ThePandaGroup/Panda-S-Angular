@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class WelcomepageComponent {
 
+  items = [
+    { imgSrc: './assets/airJordan1.png', title: 'Da Shoe', description: 'Let\'s say the shoe is a unique one' },
+    // Add more items as needed
+  ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 }
