@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ShoepageComponent implements OnInit{
 
   shoe: any;
+  storefront: any;
   seller: any;
 
   constructor(
@@ -22,7 +23,21 @@ export class ShoepageComponent implements OnInit{
 
   ngOnInit() {
     const shoeId = Number(this.route.snapshot.paramMap.get('shoeId'));
-    this.pandaProxyService.getShoe(shoeId).subscribe(shoes => this.shoe = shoes);
+    if (shoeId) {
+      this.pandaProxyService.getShoe(shoeId).subscribe(shoe => {
+        this.shoe = shoe;
+        if (this.shoe.storeId) {
+          this.pandaProxyService.getAStorefront(this.shoe.storeId).subscribe(storefront => {
+            this.storefront = storefront;
+            if (this.storefront.sellerId) {
+              this.pandaProxyService.getASeller(this.storefront.sellerId).subscribe(seller => {
+                this.seller = seller;
+              });
+            }
+          });
+        }
+      });
+    }
   }
 
 }

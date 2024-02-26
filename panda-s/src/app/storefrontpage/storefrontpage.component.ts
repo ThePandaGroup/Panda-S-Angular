@@ -19,7 +19,7 @@ export class StorefrontpageComponent {
   ) { }
 
   ngOnInit() {
-    this.pandaProxyService.getStorefront(80299).subscribe(storefront => this.storefront = storefront);
+    this.pandaProxyService.getAStorefront(80299).subscribe(storefront => this.storefront = storefront);
   }
 
 }
