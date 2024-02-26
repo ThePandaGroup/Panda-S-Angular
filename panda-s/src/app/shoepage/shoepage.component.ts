@@ -20,13 +20,7 @@ export class ShoepageComponent implements OnInit{
   ) { }
 
   ngOnInit() {
-    const idParam = this.route.snapshot.paramMap.get('id');
-    if (idParam) {
-      const id = +idParam;
-      this.pandaProxyService.getShoe(id).subscribe(shoe => this.shoe = shoe);
-    } else {
-      this.router.navigate(['/']);
-    }
+    this.pandaProxyService.getShoe(1).subscribe(shoes => this.shoe = shoes);
   }
 
 }
