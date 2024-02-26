@@ -21,7 +21,8 @@ export class ShoepageComponent implements OnInit{
   ) { }
 
   ngOnInit() {
-    this.pandaProxyService.getShoe(1).subscribe(shoes => this.shoe = shoes);
+    const shoeId = Number(this.route.snapshot.paramMap.get('shoeId'));
+    this.pandaProxyService.getShoe(shoeId).subscribe(shoes => this.shoe = shoes);
   }
 
 }
