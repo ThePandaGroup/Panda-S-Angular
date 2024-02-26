@@ -1,12 +1,32 @@
-<!-- Welcome Page Content -->
-<div id="carouselExample" class="carousel slide container px-0 my-5" style="max-width: 50%;">
-    <!-- Carousel Inner Content -->
-    <div class="carousel-inner">
+<div>
+  <div id="carouselExample" class="carousel slide container px-0 my-5" style="max-width: 50%;">
+    <div class="carousel-inner ">
+      <!-- slideshow 1-->
       <div class="carousel-item active">
-        <img src="./assets/brand.png" class="d-block w-100" alt="...">
+        <div class="row h-100 align-items-center justify-content-center">
+          <div class="col-6 text-center">
+            <img src="./assets/brand.png" class="img-fluid" alt="...">
+          </div>
+        </div>
       </div>
-      <!-- MORE CAROUSEL STUFF -->
+      <!-- slideshow  2-->
+      <div class="carousel-item">
+        <div class="row h-100 align-items-center justify-content-center">
+          <div class="col-6 text-center">
+            <img src="./assets/no_img.png" class="img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
+      <!-- slideshow 3 -->
+      <div class="carousel-item">
+        <div class="row h-100 align-items-center justify-content-center">
+          <div class="col-6 text-center">
+            <img src="./assets/brand.png" class="img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- left right button-->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -17,34 +37,41 @@
     </button>
   </div>
 
-
-  
-  <div class="container">
+  <div class="container ">
     <div class="row">
+      <!-- first shoe item card-->
       <div class="col-md-4 mb-4">
         <div class="card" style="width: 18rem;">
           <img src="./assets/airJordan1.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Da Shoe</h5>
-            <p class="card-text">Let's say the shoe is a unique one.</p>
-             <a [routerLink]="['/storefront/shoe', 1]">Go</a> 
-            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+            <p class="card-text">Let's say the shoe is a unique one</p>
+            <a [routerLink]="['/storefront/shoe', 1]">Go</a> 
+          </div>
+        </div>
+      </div>
+      <!-- second shoe item card-->
+      <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/airJordan1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Da Shoe</h5>
+            <p class="card-text">Let's say the shoe is a unique one</p>
+            <a href="./sale.html" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+      </div>
+      <!-- third shoe item card-->
+      <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/airJordan1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Da Shoe</h5>
+            <p class="card-text">Let's say the shoe is a unique one</p>
+            <a href="./sale.html" class="btn btn-primary">Go</a>
           </div>
         </div>
       </div>
     </div>
-  </div> 
-
-
-
-  <!-- <mat-grid-list cols="3" rowHeight="2:1" gutterSize="10px">
-    <mat-grid-tile>
-     <app-product-box></app-product-box>
-    </mat-grid-tile>
-  </mat-grid-list>
- -->
-
-
-
-  
-  
+  </div>
+</div>
