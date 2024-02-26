@@ -24,7 +24,7 @@ export class ShoepageComponent implements OnInit{
   ngOnInit() {
     const shoeId = Number(this.route.snapshot.paramMap.get('shoeId'));
     if (shoeId) {
-      this.pandaProxyService.getShoe(shoeId).subscribe(shoe => {
+      this.pandaProxyService.getAShoe(shoeId).subscribe(shoe => {
         this.shoe = shoe;
         if (this.shoe.storeId) {
           this.pandaProxyService.getAStorefront(this.shoe.storeId).subscribe(storefront => {

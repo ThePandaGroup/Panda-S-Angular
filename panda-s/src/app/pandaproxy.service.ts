@@ -16,7 +16,7 @@ export class PandaproxyService {
       return this.httpClient.get<any[]>(this.hostUrl + 'shoes/');
     }
   
-    getShoe(id: number) {
+    getAShoe(id: number) {
       return this.httpClient.get(this.hostUrl + 'shoes/' + id);
     }
 

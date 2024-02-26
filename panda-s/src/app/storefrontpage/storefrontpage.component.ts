@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class StorefrontpageComponent {
 
   storefront: any;
+  shoes: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -19,9 +20,20 @@ export class StorefrontpageComponent {
   ) { }
 
   ngOnInit() {
-    const storeId = Number(this.route.snapshot.paramMap.get('storeId'));
-    console.log(storeId);
-    this.pandaProxyService.getAStorefront(80299).subscribe(storefront => this.storefront = storefront);
+    const storeId = Number(this.route.snapshot.paramMap.get('storefrontId'));
+    this.pandaProxyService.getAStorefront(storeId).subscribe(storefront => this.storefront = storefront);
+    this.pandaProxyService.getAStorefront(storeId).subscribe(storefront => {
+      this.storefront = storefront;
+      this.fetchShoes((storefront as any).invList);
+    });
+  }
+
+  fetchShoes(invList: string[]) {
+    invList.forEach(shoeId => {
+      this.pandaProxyService.getAShoe(Number(shoeId)).subscribe(shoe => {
+        this.shoes.push(shoe);
+      });
+    });
   }
 
 }
