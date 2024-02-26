@@ -1,37 +1,17 @@
-// const chai = require('chai');
-// const expect = chai.expect;
-// const nock = require('nock');
-// const PandaproxyService = require('../src/app/pandaproxy.service');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const server = 'http://localhost:8080/';
+chai.use(chaiHttp);
+const expect = chai.expect;
 
-// describe('PandaproxyService', () => {
-//   let service;
-
-//   beforeEach(() => {
-//     service = new PandaproxyService();
-//   });
-
-//   it('should fetch shoes', async () => {
-//     const dummyShoes = [
-//       { id: 1, name: 'Shoe 1' },
-//       { id: 2, name: 'Shoe 2' }
-//     ];
-
-//     nock('http://localhost:8080')
-//       .get('/shoes/')
-//       .reply(200, dummyShoes);
-
-//     const shoes = await service.getShoes();
-//     expect(shoes).to.deep.equal(dummyShoes);
-//   });
-
-//   it('should fetch a shoe by id', async () => {
-//     const dummyShoe = { id: 1, name: 'Shoe 1' };
-
-//     nock('http://localhost:8080')
-//       .get('/shoes/1')
-//       .reply(200, dummyShoe);
-
-//     const shoe = await service.getShoe(1);
-//     expect(shoe).to.deep.equal(dummyShoe);
-//   });
-// });
+describe('Get a single object', function() {
+  it('Should return an object', function(done) {
+    chai.request(server)
+      .get('app/shoes/1')
+      .end(function(err, res) {
+        expect(res).to.have.status(200);
+        expect(res.body).to.be.a('object');
+        done();
+      });
+  });
+});

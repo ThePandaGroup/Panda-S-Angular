@@ -20,4 +20,8 @@ export class PandaproxyService {
       return this.httpClient.get(this.hostUrl + 'shoes/' + id);
     }
 
+    getStorefront(id: number) {
+      return this.httpClient.get(this.hostUrl + 'storefronts/' + id);
+    }
+
 }

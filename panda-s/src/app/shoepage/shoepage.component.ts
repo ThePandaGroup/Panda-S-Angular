@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ShoepageComponent implements OnInit{
 
   shoe: any;
+  seller: any;
 
   constructor(
     private route: ActivatedRoute,

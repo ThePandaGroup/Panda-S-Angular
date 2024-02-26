@@ -29,6 +29,9 @@
             <button class="btn btn-primary">Buy Now</button>
             <button class="btn btn-secondary">Add to Cart</button>
           </div>
+          <div class="col-6">
+            <a [routerLink]="['/storefront', shoe.storeId]">See more shoes from this storefront</a>
+          </div>
         </div>
       </div>
     </div>
@@ -43,10 +46,10 @@
     </ul>
     <div class="tab-content" id="productTabContent">
       <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-        {{ shoe.description }}
+        {{ shoe.shoeDescription }}
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        Email: {{ shoe.sellerEmail }}
+        Email: {{ seller.sellerEmail }}
       </div>
     </div>
     <!-- Customer Reviews -->
