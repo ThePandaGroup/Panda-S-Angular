@@ -42,8 +42,8 @@
       <div class="card" style="width: 18rem;">
         <img src="./assets/airJordan1.png" class="card-img-top" alt="Shoe image">
         <div class="card-body">
-          <h5 class="card-title">{{ shoe.shoeName }}</h5>
-          <p class="card-text">{{ shoe.shoeDescription }}</p>
+          <h5 class="card-title">{{ shoe?.shoeName }}</h5>
+          <p class="card-text">{{ shoe?.shoeDescription }}</p>
           <a [routerLink]="['/storefront/shoe', shoe.shoeId]" class="btn btn-primary">Go</a>
         </div>
       </div>

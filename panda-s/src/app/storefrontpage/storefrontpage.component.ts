@@ -19,6 +19,8 @@ export class StorefrontpageComponent {
   ) { }
 
   ngOnInit() {
+    const storeId = Number(this.route.snapshot.paramMap.get('storeId'));
+    console.log(storeId);
     this.pandaProxyService.getAStorefront(80299).subscribe(storefront => this.storefront = storefront);
   }
 

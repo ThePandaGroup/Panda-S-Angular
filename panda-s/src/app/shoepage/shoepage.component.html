@@ -8,29 +8,29 @@
       <div class="col-md-6 my-5">
         <div class="row">
           <div class="col-12">
-            <h2>{{ shoe.shoeName }}</h2>
+            <h2>{{ shoe?.shoeName }}</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <p>{{ shoe.shoePrice }}</p>
+            <p>${{ shoe?.shoePrice }}</p>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <p>Rating: {{ shoe.shoeRating }}/5</p>
+            <p>Rating: {{ shoe?.shoeRating }}/5</p>
           </div>
         </div>
         <div class="row">
           <div class="col-6">
-            <p>Quantity: 1</p>
+            <p>Quantity: {{ shoe?.shoeQuantity }}</p>
           </div>
           <div class="col-6">
             <button class="btn btn-primary">Buy Now</button>
             <button class="btn btn-secondary">Add to Cart</button>
           </div>
           <div class="col-6">
-            <a [routerLink]="['/storefront', shoe.storeId]">See more shoes from this storefront</a>
+            <a [routerLink]="['/storefront', shoe?.storeId]" class="btn btn-success btn-sm">See more shoes from {{storefront?.storeName}} ></a>
           </div>
         </div>
       </div>
@@ -46,10 +46,10 @@
     </ul>
     <div class="tab-content" id="productTabContent">
       <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-        {{ shoe.shoeDescription }}
+        {{ shoe?.shoeDescription }}
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        Email: {{ seller.sellerEmail }}
+        Email: {{ seller?.sellerEmail }}
       </div>
     </div>
     
