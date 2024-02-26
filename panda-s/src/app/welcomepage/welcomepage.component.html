@@ -1,77 +1,52 @@
-<div>
-  <div id="carouselExample" class="carousel slide container px-0 my-5" style="max-width: 50%;">
-    <div class="carousel-inner ">
-      <!-- slideshow 1-->
-      <div class="carousel-item active">
-        <div class="row h-100 align-items-center justify-content-center">
-          <div class="col-6 text-center">
-            <img src="./assets/brand.png" class="img-fluid" alt="...">
-          </div>
-        </div>
-      </div>
-      <!-- slideshow  2-->
-      <div class="carousel-item">
-        <div class="row h-100 align-items-center justify-content-center">
-          <div class="col-6 text-center">
-            <img src="./assets/no_img.png" class="img-fluid" alt="...">
-          </div>
-        </div>
-      </div>
-      <!-- slideshow 3 -->
-      <div class="carousel-item">
-        <div class="row h-100 align-items-center justify-content-center">
-          <div class="col-6 text-center">
-            <img src="./assets/brand.png" class="img-fluid" alt="...">
-          </div>
+<div id="carouselExample" class="carousel slide container px-0 my-5" style="max-width: 50%;">
+  <div class="carousel-inner ">
+    <!-- slideshow 1-->
+    <div class="carousel-item active">
+      <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-6 text-center">
+          <img src="./assets/brand.png" class="img-fluid" alt="...">
         </div>
       </div>
     </div>
-    <!-- left right button-->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-  <div class="container ">
-    <div class="row">
-      <!-- first shoe item card-->
-      <div class="col-md-4 mb-4">
-        <div class="card" style="width: 18rem;">
-          <img src="./assets/airJordan1.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Da Shoe</h5>
-            <p class="card-text">Let's say the shoe is a unique one</p>
-            <a [routerLink]="['/storefront/shoe', 1]">Go</a> 
-          </div>
+    <!-- slideshow  2-->
+    <div class="carousel-item">
+      <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-6 text-center">
+          <img src="./assets/no_img.png" class="img-fluid" alt="...">
         </div>
       </div>
-      <!-- second shoe item card-->
-      <div class="col-md-4 mb-4">
-        <div class="card" style="width: 18rem;">
-          <img src="./assets/airJordan1.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Da Shoe</h5>
-            <p class="card-text">Let's say the shoe is a unique one</p>
-            <a href="./sale.html" class="btn btn-primary">Go</a>
-          </div>
-        </div>
-      </div>
-      <!-- third shoe item card-->
-      <div class="col-md-4 mb-4">
-        <div class="card" style="width: 18rem;">
-          <img src="./assets/airJordan1.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Da Shoe</h5>
-            <p class="card-text">Let's say the shoe is a unique one</p>
-            <a href="./sale.html" class="btn btn-primary">Go</a>
-          </div>
+    </div>
+    <!-- slideshow 3 -->
+    <div class="carousel-item">
+      <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-6 text-center">
+          <img src="./assets/brand.png" class="img-fluid" alt="...">
         </div>
       </div>
     </div>
   </div>
+  <!-- left right button-->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let shoe of shoes">
+      <div class="card" style="width: 18rem;">
+        <img src="./assets/airJordan1.png" class="card-img-top" alt="Shoe image">
+        <div class="card-body">
+          <h5 class="card-title">{{ shoe.shoeName }}</h5>
+          <p class="card-text">{{ shoe.shoeDescription }}</p>
+          <a [routerLink]="['/storefront/shoe', shoe.shoeId]" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

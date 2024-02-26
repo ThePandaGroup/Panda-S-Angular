@@ -12,7 +12,7 @@ export class PandaproxyService {
     constructor(private httpClient: HttpClient) { }
     
 
-    getShoes() {
+    getAllShoes() {
       return this.httpClient.get<any[]>(this.hostUrl + 'shoes/');
     }
   

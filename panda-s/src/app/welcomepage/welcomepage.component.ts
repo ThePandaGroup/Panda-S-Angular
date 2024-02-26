@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PandaproxyService } from '../pandaproxy.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcomepage',
@@ -7,15 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomepageComponent implements OnInit{
 
-  items = [
-    { imgSrc: './assets/airJordan1.png', title: 'Da Shoe', description: 'Let\'s say the shoe is a unique one' },
-    // Add more items as needed
-  ];
+  shoes: any[] = [];
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private pandaProxyService: PandaproxyService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-
+    this.pandaProxyService.getAllShoes().subscribe(shoes => this.shoes = shoes);
   }
-
 }
