@@ -8,8 +8,9 @@ import { StorefrontpageComponent } from './storefrontpage/storefrontpage.compone
 
 const routes: Routes = [
   {path: '', component: WelcomepageComponent},
-  {path: 'storefront', component: StorefrontpageComponent},
-  {path: 'storefront/shoe/:id', component: ShoepageComponent}
+  {path: 'storefront/:storefrontId', component: StorefrontpageComponent},
+  {path: 'storefront/shoe/:shoeId', component: ShoepageComponent},
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
