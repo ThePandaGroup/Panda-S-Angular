@@ -7,17 +7,17 @@ import { HttpClient } from '@angular/common/http';
 export class PandaproxyService {
 
 
-    hostUrl:string = 'http://localhost:8080/';
+    hostUrl:string = 'http://localhost:8080/app/';
 
     constructor(private httpClient: HttpClient) { }
     
 
     getShoes() {
-      return this.httpClient.get(this.hostUrl + 'api/shoes');
+      return this.httpClient.get<any[]>(this.hostUrl + 'shoes/');
     }
   
     getShoe(id: number) {
-      return this.httpClient.get(this.hostUrl + 'api/shoes/${id}');
+      return this.httpClient.get(this.hostUrl + 'shoes/' + id);
     }
 
 }
