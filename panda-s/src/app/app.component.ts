@@ -27,10 +27,10 @@ export class AppComponent {
     });
   }
 
-  fetchCartItems(cart: string[]) {
-    cart.forEach(shoeId => {
-      this.pandaProxyService.getAShoe(Number(shoeId)).subscribe(item => {
-        this.cart.push(item);
+  fetchCartItems(cart: CartItem[]) {
+    cart.forEach((cartItem: CartItem) => {
+      this.pandaProxyService.getAShoe(Number(cartItem.shoeID)).subscribe(shoe => {
+        this.cart.push(shoe);
       });
     });
   }
@@ -38,4 +38,9 @@ export class AppComponent {
   removeFromCart(shoeId: number) {
     return;
   }
+}
+
+interface CartItem {
+  shoeID: string;
+  addedAt: Date;
 }

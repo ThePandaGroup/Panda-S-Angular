@@ -44,14 +44,12 @@
                 <div *ngFor="let shoe of cart" class="card mb-3" style="max-width: 540px;">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <!-- Bind the src attribute to dynamically display the shoe's image -->
                       <img src="./assets/airJordan1.png" class="img-fluid rounded-start" alt="shoe image">
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
                         <h5 class="card-title">{{ shoe?.shoeName }}</h5>
                         <p class="card-text">Quantity: 1</p>
-                        <!-- Add a click event listener to the Remove button -->
                         <button type="button" class="btn btn-danger" (click)="removeFromCart(shoe)">Remove</button>
                       </div>
                     </div>
