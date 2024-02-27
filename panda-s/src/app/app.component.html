@@ -25,9 +25,47 @@
           <input class="form-control ms-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <button type="button" class="btn btn-primary  bi-cart-fill ms-3 d-flex" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
       </div>
     </div>
   </nav>
+      
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--Shoe items using card component-->  
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="./assets/airJordan1.png" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Shoe Name</h5>
+                          <p class="card-text"> Quantity: Some number</p>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="#" data-bs-target="#">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+              <button type="button" class="btn btn-primary">Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 
   <router-outlet></router-outlet>
 </html>
