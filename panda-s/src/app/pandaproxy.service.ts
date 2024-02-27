@@ -28,4 +28,12 @@ export class PandaproxyService {
       return this.httpClient.get(this.hostUrl + 'storefronts/' + id);
     }
 
+    getABuyer(id: number) {
+      return this.httpClient.get(this.hostUrl + 'buyers/' + id);
+    }
+
+    updateCart(buyerId: number, shoeId: number) {
+      return this.httpClient.post(this.hostUrl + 'buyers/' + buyerId + '/cart/' + shoeId, {});
+    }
+
 }
