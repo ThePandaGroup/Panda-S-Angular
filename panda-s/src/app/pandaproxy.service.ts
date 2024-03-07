@@ -7,33 +7,33 @@ import { HttpClient } from '@angular/common/http';
 export class PandaproxyService {
 
 
-    hostUrl:string = 'http://localhost:8080/app/';
+    hostUrl:string = 'https://panda-s.azurewebsites.net/';
 
     constructor(private httpClient: HttpClient) { }
     
 
     getAllShoes() {
-      return this.httpClient.get<any[]>(this.hostUrl + 'shoes/');
+      return this.httpClient.get<any[]>(this.hostUrl + 'app/shoes/');
     }
   
     getAShoe(id: number) {
-      return this.httpClient.get(this.hostUrl + 'shoes/' + id);
+      return this.httpClient.get(this.hostUrl + 'app/shoes/' + id);
     }
 
     getASeller(id: number) {
-      return this.httpClient.get(this.hostUrl + 'sellers/' + id);
+      return this.httpClient.get(this.hostUrl + 'app/sellers/' + id);
     }
 
     getAStorefront(id: number) {
-      return this.httpClient.get(this.hostUrl + 'storefronts/' + id);
+      return this.httpClient.get(this.hostUrl + 'app/storefronts/' + id);
     }
 
     getABuyer(id: number) {
-      return this.httpClient.get(this.hostUrl + 'buyers/' + id);
+      return this.httpClient.get(this.hostUrl + 'app/buyers/' + id);
     }
 
     updateCart(buyerId: number, shoeId: number) {
-      return this.httpClient.post(this.hostUrl + 'buyers/' + buyerId + '/cart/' + shoeId, {});
+      return this.httpClient.post(this.hostUrl + 'app/buyers/' + buyerId + '/cart/' + shoeId, {});
     }
 
 }
