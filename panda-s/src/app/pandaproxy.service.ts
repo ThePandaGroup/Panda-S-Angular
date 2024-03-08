@@ -13,6 +13,7 @@ export class PandaproxyService {
     
 
     getAllShoes() {
+      console.log('getting all shoes');
       return this.httpClient.get<any[]>(this.hostUrl + 'app/shoes/');
     }
   
@@ -34,6 +35,10 @@ export class PandaproxyService {
 
     updateCart(buyerId: number, shoeId: number) {
       return this.httpClient.post(this.hostUrl + 'app/buyers/' + buyerId + '/cart/' + shoeId, {});
+    }
+
+    getLoggedInUser() {
+      return this.httpClient.get('/api/user');
     }
 
 }
