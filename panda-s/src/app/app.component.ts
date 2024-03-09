@@ -69,9 +69,7 @@ export class AppComponent {
     this.pandaProxyService.logout().subscribe(() => {
       localStorage.clear();
       sessionStorage.clear();
-      this.router.navigate(['https://panda-s.azurewebsites.net/']).then(() => {
-        window.location.reload();
-      });
+      window.location.href = 'https://panda-s.azurewebsites.net/';
     });
   }
 }
