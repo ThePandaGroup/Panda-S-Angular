@@ -32,24 +32,10 @@ export class AppComponent {
   //   });
   // }
 
-  // ngOnInit() {
-  //   this.pandaProxyService.getLoggedInUser().subscribe((user) => {
-  //     if (user) {
-  //       this.isLoggedIn = true;
-  //       this.buyer = user;
-  //       this.pandaProxyService.getABuyer(user).subscribe(buyer => {
-  //         this.buyer = buyer;
-  //         this.fetchCartItems((buyer as any).cart);
-  //       });
-  //     } else {
-  //       this.isLoggedIn = false;
-  //     }
-  //   });
-  // }
-
   ngOnInit() {
+    console.log("APP COMPONENT INIT");
     this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
-      console.log("BUYER IS " + buyerId);
+      console.log("BUYER IS PLS FOCUHSINDKNA " + buyerId);
       if (buyerId) {
         this.isLoggedIn = true;
         this.pandaProxyService.getABuyer(Number(buyerId)).subscribe(buyer => {
@@ -57,9 +43,12 @@ export class AppComponent {
           this.fetchCartItems((buyer as any).cart);
         });
       } else {
+        console.log("NO BUYER FUCKKKKKKKK");
         this.isLoggedIn = false;
       }
     });
+
+    console.log("ok so this is the end");
   }
 
   fetchCartItems(cart: CartItem[]) {

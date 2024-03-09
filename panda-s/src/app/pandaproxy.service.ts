@@ -34,23 +34,18 @@ export class PandaproxyService {
       return this.httpClient.get(this.hostUrl + 'app/buyers/' + id);
     }
 
-    updateCart(buyerId: number, shoeId: number) {
-      return this.httpClient.post(this.hostUrl + 'app/buyers/' + buyerId + '/cart/' + shoeId, {});
+    // updateCart(buyerId: number, shoeId: number) {
+    //   return this.httpClient.post(this.hostUrl + 'app/buyers/' + buyerId + '/cart/' + shoeId, {});
+    // }
+
+
+    updateCart(shoeId: number) {
+      return this.httpClient.post(this.hostUrl + 'app/buyers/cart/' + shoeId, {});
     }
 
-    // getLoggedInUser() {
-    //   return this.httpClient.get('/app/user');
-    // }
-
-
-    // getLoggedInUser(): Observable<string> {
-    //   return this.httpClient.get('/app/user', { responseType: 'text' });
-    // }
-
-
-    // Inside your PandaproxyService
 
     getLoggedInUser(): Observable<string> {
+      console.log('getting logged in user... PLEASE WORK!!!');
       return this.httpClient.get<string>(this.hostUrl + 'app/user');
     }
 
