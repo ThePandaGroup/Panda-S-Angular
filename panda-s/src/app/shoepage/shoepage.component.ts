@@ -40,7 +40,14 @@ export class ShoepageComponent implements OnInit{
     }
   }
 
+  // addToCart(shoeId: number) {
+  //   this.pandaProxyService.updateCart(1111, shoeId).subscribe(() => {
+  //     window.location.reload();
+  //   });
+  // }
+
   addToCart(shoeId: number) {
+    console.log('adding to cart PLSDSAOJDNSAJK');
     this.pandaProxyService.updateCart(shoeId).subscribe(() => {
       window.location.reload();
     });

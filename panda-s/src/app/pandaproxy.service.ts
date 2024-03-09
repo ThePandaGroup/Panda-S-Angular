@@ -40,6 +40,7 @@ export class PandaproxyService {
 
 
     updateCart(shoeId: number) {
+      console.log('updating cart to....');
       return this.httpClient.post(this.hostUrl + 'app/buyers/cart/' + shoeId, {});
     }
 
