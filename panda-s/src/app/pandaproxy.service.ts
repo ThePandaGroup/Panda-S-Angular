@@ -18,19 +18,19 @@ export class PandaproxyService {
       return this.httpClient.get<any[]>(this.hostUrl + 'app/shoes/');
     }
   
-    getAShoe(id: number) {
+    getAShoe(id: string) {
       return this.httpClient.get(this.hostUrl + 'app/shoes/' + id);
     }
 
-    getASeller(id: number) {
+    getASeller(id: string) {
       return this.httpClient.get(this.hostUrl + 'app/sellers/' + id);
     }
 
-    getAStorefront(id: number) {
+    getAStorefront(id: string) {
       return this.httpClient.get(this.hostUrl + 'app/storefronts/' + id);
     }
 
-    getABuyer(id: number) {
+    getABuyer(id: string) {
       return this.httpClient.get(this.hostUrl + 'app/buyers/' + id);
     }
 
@@ -39,7 +39,7 @@ export class PandaproxyService {
     // }
 
 
-    updateCart(shoeId: number) {
+    updateCart(shoeId: string) {
       console.log('updating cart to....');
       return this.httpClient.post(this.hostUrl + 'app/buyers/cart/' + shoeId, {});
     }

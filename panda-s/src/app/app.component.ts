@@ -35,10 +35,10 @@ export class AppComponent {
   ngOnInit() {
     console.log("APP COMPONENT INIT");
     this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
-      console.log("BUYER IS" + buyerId);
+      console.log("BUYER IS " + buyerId);
       if (buyerId) {
         this.isLoggedIn = true;
-        this.pandaProxyService.getABuyer(Number(buyerId)).subscribe(buyer => {
+        this.pandaProxyService.getABuyer(buyerId).subscribe(buyer => {
           this.buyer = buyer;
           this.fetchCartItems((buyer as any).cart);
         });
@@ -53,7 +53,7 @@ export class AppComponent {
 
   fetchCartItems(cart: CartItem[]) {
     cart.forEach((cartItem: CartItem) => {
-      this.pandaProxyService.getAShoe(Number(cartItem.shoeID)).subscribe(shoe => {
+      this.pandaProxyService.getAShoe(cartItem.shoeID).subscribe(shoe => {
         this.cart.push(shoe);
       });
     });
