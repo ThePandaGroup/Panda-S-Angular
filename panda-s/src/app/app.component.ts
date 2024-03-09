@@ -63,9 +63,14 @@ export class AppComponent {
     return;
   }
 
-  userLogout() {
+  userLogout(event: Event) {
+    event.preventDefault();
     this.pandaProxyService.logout().subscribe(() => {
-      window.location.reload();
+      localStorage.clear();
+      sessionStorage.clear();
+      this.router.navigate(['https://panda-s.azurewebsites.net/']).then(() => {
+        window.location.reload();
+      });
     });
   }
 }

@@ -50,9 +50,14 @@ export class PandaproxyService {
       return this.httpClient.get<string>(this.hostUrl + 'app/login/');
     }
 
+    // logout(): Observable<void> {
+    //   return this.httpClient.get<void>(this.hostUrl + 'app/logout/');
+    // }
+
     logout(): Observable<void> {
-      return this.httpClient.get<void>(this.hostUrl + 'app/logout/');
+      return this.httpClient.get<void>(this.hostUrl + 'app/logout/', { withCredentials: true });
     }
+    
 
 
 }
