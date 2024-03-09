@@ -20,7 +20,7 @@ export class StorefrontpageComponent {
   ) { }
 
   ngOnInit() {
-    const storeId = Number(this.route.snapshot.paramMap.get('storefrontId'));
+    const storeId = this.route.snapshot.paramMap.get('storefrontId');
     if(storeId) {
       this.pandaProxyService.getAStorefront(storeId).subscribe(storefront => {
         this.storefront = storefront;
@@ -31,7 +31,7 @@ export class StorefrontpageComponent {
 
   fetchShoes(invList: string[]) {
     invList.forEach(shoeId => {
-      this.pandaProxyService.getAShoe(Number(shoeId)).subscribe(shoe => {
+      this.pandaProxyService.getAShoe(shoeId).subscribe(shoe => {
         this.shoes.push(shoe);
       });
     });

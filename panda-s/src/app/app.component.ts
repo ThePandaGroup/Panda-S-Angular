@@ -32,10 +32,31 @@ export class AppComponent {
   //   });
   // }
 
+  // ngOnInit() {
+  //   console.log("APP COMPONENT INIT");
+  //   this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
+  //     console.log("BUYER IS: " + buyerId);
+  //     if (buyerId) {
+  //       this.isLoggedIn = true;
+  //       this.pandaProxyService.getABuyer(buyerId).subscribe(buyer => {
+  //         this.buyer = buyer;
+  //         this.fetchCartItems((buyer as any).cart);
+  //       });
+  //     } else {
+  //       console.log("NO BUYER");
+  //       this.isLoggedIn = false;
+  //     }
+  //   });
+
+  //   console.log("ok so this is the end");
+  // }
+
+
   ngOnInit() {
     console.log("APP COMPONENT INIT");
-    this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
-      console.log("BUYER IS " + buyerId);
+    this.pandaProxyService.getLoggedInUser().subscribe(response => {
+      const buyerId = response.buyerId;
+      console.log("BUYER IS: " + buyerId);
       if (buyerId) {
         this.isLoggedIn = true;
         this.pandaProxyService.getABuyer(buyerId).subscribe(buyer => {
@@ -47,7 +68,7 @@ export class AppComponent {
         this.isLoggedIn = false;
       }
     });
-
+  
     console.log("ok so this is the end");
   }
 

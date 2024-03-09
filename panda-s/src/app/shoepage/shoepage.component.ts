@@ -22,7 +22,7 @@ export class ShoepageComponent implements OnInit{
   ) { }
 
   ngOnInit() {
-    const shoeId = Number(this.route.snapshot.paramMap.get('shoeId'));
+    const shoeId = this.route.snapshot.paramMap.get('shoeId');
     if (shoeId) {
       this.pandaProxyService.getAShoe(shoeId).subscribe(shoe => {
         this.shoe = shoe;
@@ -46,7 +46,7 @@ export class ShoepageComponent implements OnInit{
   //   });
   // }
 
-  addToCart(shoeId: number) {
+  addToCart(shoeId: string) {
     console.log('adding to cart');
     this.pandaProxyService.updateCart(shoeId).subscribe(() => {
       window.location.reload();
