@@ -43,8 +43,16 @@ export class PandaproxyService {
     // }
 
 
+    // getLoggedInUser(): Observable<string> {
+    //   return this.httpClient.get('/app/user', { responseType: 'text' });
+    // }
+
+
+    // Inside your PandaproxyService
+
     getLoggedInUser(): Observable<string> {
-      return this.httpClient.get('/app/user', { responseType: 'text' });
+      return this.httpClient.get<string>(this.hostUrl + 'app/user');
     }
+
 
 }

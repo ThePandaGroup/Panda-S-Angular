@@ -49,6 +49,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
+      console.log("BUYER IS " + buyerId);
       if (buyerId) {
         this.isLoggedIn = true;
         this.pandaProxyService.getABuyer(Number(buyerId)).subscribe(buyer => {
