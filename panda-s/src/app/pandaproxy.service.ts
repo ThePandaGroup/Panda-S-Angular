@@ -55,6 +55,7 @@ export class PandaproxyService {
     // }
 
     logout(): Observable<void> {
+      console.log('logging out...')
       return this.httpClient.get<void>(this.hostUrl + 'app/logout/', { withCredentials: true });
     }
     

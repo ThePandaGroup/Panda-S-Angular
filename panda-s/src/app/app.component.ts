@@ -64,6 +64,7 @@ export class AppComponent {
   }
 
   userLogout(event: Event) {
+    console.log("LOGGING OUT NOW");
     event.preventDefault();
     this.pandaProxyService.logout().subscribe(() => {
       localStorage.clear();
