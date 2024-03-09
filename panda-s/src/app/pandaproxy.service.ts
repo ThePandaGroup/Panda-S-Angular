@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,8 +38,13 @@ export class PandaproxyService {
       return this.httpClient.post(this.hostUrl + 'app/buyers/' + buyerId + '/cart/' + shoeId, {});
     }
 
-    getLoggedInUser() {
-      return this.httpClient.get('/api/user');
+    // getLoggedInUser() {
+    //   return this.httpClient.get('/app/user');
+    // }
+
+
+    getLoggedInUser(): Observable<string> {
+      return this.httpClient.get('/app/user', { responseType: 'text' });
     }
 
 }

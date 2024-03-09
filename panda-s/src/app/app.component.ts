@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { PandaproxyService } from './pandaproxy.service';
 import { Router } from '@angular/router';
 
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,24 +25,41 @@ export class AppComponent {
     private router: Router
   ) { }
 
-  ngOnInit() {
-    this.pandaProxyService.getABuyer(1111).subscribe(buyer => {
-      this.buyer = buyer;
-      this.fetchCartItems((buyer as any).cart);
-    });
-  }
+  // ngOnInit() {
+  //   this.pandaProxyService.getABuyer(1111).subscribe(buyer => {
+  //     this.buyer = buyer;
+  //     this.fetchCartItems((buyer as any).cart);
+  //   });
+  // }
 
   // ngOnInit() {
-  //   this.pandaProxyService.getLoggedInUser().subscribe(user => {
+  //   this.pandaProxyService.getLoggedInUser().subscribe((user) => {
   //     if (user) {
   //       this.isLoggedIn = true;
   //       this.buyer = user;
-  //       this.fetchCartItems((user as any).cart);
+  //       this.pandaProxyService.getABuyer(user).subscribe(buyer => {
+  //         this.buyer = buyer;
+  //         this.fetchCartItems((buyer as any).cart);
+  //       });
   //     } else {
   //       this.isLoggedIn = false;
   //     }
   //   });
   // }
+
+  ngOnInit() {
+    this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
+      if (buyerId) {
+        this.isLoggedIn = true;
+        this.pandaProxyService.getABuyer(Number(buyerId)).subscribe(buyer => {
+          this.buyer = buyer;
+          this.fetchCartItems((buyer as any).cart);
+        });
+      } else {
+        this.isLoggedIn = false;
+      }
+    });
+  }
 
   fetchCartItems(cart: CartItem[]) {
     cart.forEach((cartItem: CartItem) => {
