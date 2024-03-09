@@ -63,15 +63,23 @@ export class AppComponent {
     return;
   }
 
+  // In your app.component.ts
   userLogout(event: Event) {
-    console.log("LOGGING OUT NOW");
     event.preventDefault();
-    this.pandaProxyService.logout().subscribe(() => {
-      localStorage.clear();
-      sessionStorage.clear();
-      window.location.href = 'https://panda-s.azurewebsites.net/';
+    console.log("LOGGING OUT NOW");
+    this.pandaProxyService.logout().subscribe({
+      next: () => {
+        console.log("Logout successful. Reloading page.");
+        window.location.reload(); 
+      },
+      error: (error) => {
+        console.error("Error during logout:", error);
+  
+        window.location.reload(); 
+      }
     });
   }
+
 }
 
 interface CartItem {
