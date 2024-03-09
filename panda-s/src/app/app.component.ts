@@ -35,7 +35,7 @@ export class AppComponent {
   ngOnInit() {
     console.log("APP COMPONENT INIT");
     this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
-      console.log("BUYER IS PLS FOCUHSINDKNA " + buyerId);
+      console.log("BUYER IS" + buyerId);
       if (buyerId) {
         this.isLoggedIn = true;
         this.pandaProxyService.getABuyer(Number(buyerId)).subscribe(buyer => {
@@ -43,7 +43,7 @@ export class AppComponent {
           this.fetchCartItems((buyer as any).cart);
         });
       } else {
-        console.log("NO BUYER FUCKKKKKKKK");
+        console.log("NO BUYER");
         this.isLoggedIn = false;
       }
     });
@@ -61,6 +61,12 @@ export class AppComponent {
 
   removeFromCart(shoeId: number) {
     return;
+  }
+
+  userLogout() {
+    this.pandaProxyService.logout().subscribe(() => {
+      window.location.reload();
+    });
   }
 }
 

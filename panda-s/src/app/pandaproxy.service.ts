@@ -46,8 +46,12 @@ export class PandaproxyService {
 
 
     getLoggedInUser(): Observable<string> {
-      console.log('getting logged in user... PLEASE WORK!!!');
-      return this.httpClient.get<string>(this.hostUrl + 'app/user');
+      console.log('getting logged in user');
+      return this.httpClient.get<string>(this.hostUrl + 'app/login/');
+    }
+
+    logout(): Observable<void> {
+      return this.httpClient.get<void>(this.hostUrl + 'app/logout/');
     }
 
 
