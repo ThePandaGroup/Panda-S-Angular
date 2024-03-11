@@ -38,7 +38,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let shoe of shoes">
+    <div class="col-md-4 mb-4" *ngFor="let shoe of shoes | slice:0:6">
       <div class="card" style="width: 18rem;">
         <img src="./assets/airJordan1.png" class="card-img-top" alt="Shoe image">
         <div class="card-body">

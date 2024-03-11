@@ -1,6 +1,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const server = 'http://localhost:8080/';
+const server = 'https://panda-s.azurewebsites.net/';
 chai.use(chaiHttp);
 const expect = chai.expect;
 

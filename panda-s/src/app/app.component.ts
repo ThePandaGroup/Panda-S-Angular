@@ -25,33 +25,6 @@ export class AppComponent {
     private router: Router
   ) { }
 
-  // ngOnInit() {
-  //   this.pandaProxyService.getABuyer(1111).subscribe(buyer => {
-  //     this.buyer = buyer;
-  //     this.fetchCartItems((buyer as any).cart);
-  //   });
-  // }
-
-  // ngOnInit() {
-  //   console.log("APP COMPONENT INIT");
-  //   this.pandaProxyService.getLoggedInUser().subscribe((buyerId: string) => {
-  //     console.log("BUYER IS: " + buyerId);
-  //     if (buyerId) {
-  //       this.isLoggedIn = true;
-  //       this.pandaProxyService.getABuyer(buyerId).subscribe(buyer => {
-  //         this.buyer = buyer;
-  //         this.fetchCartItems((buyer as any).cart);
-  //       });
-  //     } else {
-  //       console.log("NO BUYER");
-  //       this.isLoggedIn = false;
-  //     }
-  //   });
-
-  //   console.log("ok so this is the end");
-  // }
-
-
   ngOnInit() {
     console.log("APP COMPONENT INIT");
     this.pandaProxyService.getLoggedInUser().subscribe(response => {
@@ -80,8 +53,17 @@ export class AppComponent {
     });
   }
 
-  removeFromCart(shoeId: number) {
-    return;
+  removeFromCart(shoeId: string) {
+    this.pandaProxyService.removeFromCart(shoeId).subscribe(
+      response => {
+        console.log('Shoe removed from cart', response);
+        // Refresh the cart
+        this.cart = [];
+        this.fetchCartItems(this.buyer.cart);
+        window.location.reload(); 
+      },
+      error => console.error('Error removing shoe from cart', error)
+    );
   }
 
   // In your app.component.ts

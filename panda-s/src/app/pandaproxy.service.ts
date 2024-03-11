@@ -63,6 +63,12 @@ export class PandaproxyService {
       console.log('logging out...')
       return this.httpClient.get<void>(this.hostUrl + 'app/logout/', { withCredentials: true });
     }
+
+
+    removeFromCart(shoeId: string): Observable<any> {
+      console.log('removing from cart...');
+      return this.httpClient.delete(this.hostUrl + 'app/buyers/cart/' + shoeId, { withCredentials: true });
+    }
     
 
 
