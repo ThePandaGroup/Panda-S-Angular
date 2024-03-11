@@ -23,7 +23,7 @@
         </ul>
 
         <!--Shooping cart trigger button -->
-        <button type="button" class="btn btn-primary  bi-cart-fill ms-3 d-flex" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+        <button type="button" class="btn btn-primary  bi-cart-fill ms-3 d-flex fs-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
         
 
               <!--User Menu-->
@@ -46,7 +46,7 @@
 
                <!--User Menu-->
             <div class="dropdown">
-              <button class="btn btn-primary bi bi-person-circle dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
+              <button class="btn btn-primary bi bi-person-circle dropdown-toggle fs-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
               <ul class="dropdown-menu" data-bs-popper="left-start" aria-labelledby="dropdownMenuButton1">
                 <li *ngIf="isLoggedIn">
                   <div class="card" style="width: 14 rem;">
@@ -83,7 +83,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Shopping Cart</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -91,7 +91,7 @@
                 <div *ngFor="let shoe of cart" class="card mb-3" style="max-width: 540px;">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <img src="./assets/airJordan1.png" class="img-fluid rounded-start" alt="shoe image">
+                      <img [src]="shoe?.shoePic" class="img-fluid rounded-start" alt="shoe image">
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
