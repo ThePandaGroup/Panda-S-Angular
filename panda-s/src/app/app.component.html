@@ -22,8 +22,15 @@
           </li>
         </ul>
 
+        <style> 
+          .custom-button {
+            width:80 px;
+            height:40 px;
+          }
+        </style>
+
         <!--Shooping cart trigger button -->
-        <button type="button" class="btn btn-primary  bi-cart-fill ms-3 d-flex fs-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+        <button type="button" class="btn btn-primary  bi-cart-fill ms-3 d-flex fs-5 btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>&nbsp;
         
 
               <!--User Menu-->
@@ -46,7 +53,7 @@
 
                <!--User Menu-->
             <div class="dropdown">
-              <button class="btn btn-primary bi bi-person-circle dropdown-toggle fs-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
+              <button class="btn btn-primary bi bi-person-circle dropdown-toggle fs-5 btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
               <ul class="dropdown-menu" data-bs-popper="left-start" aria-labelledby="dropdownMenuButton1">
                 <li *ngIf="isLoggedIn">
                   <div class="card" style="width: 14 rem;">
