@@ -53,4 +53,11 @@ export class ShoepageComponent implements OnInit{
     });
   }
 
+  addToFavList(shoeId: string) {
+    console.log('adding to fav list');
+    this.pandaProxyService.updateFavList(shoeId).subscribe(() => {
+      window.location.reload();
+    });
+  }
+
 }

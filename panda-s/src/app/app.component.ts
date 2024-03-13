@@ -18,6 +18,7 @@ export class AppComponent {
 
   buyer: any;
   cart: any[] = [];
+  favList: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,7 @@ export class AppComponent {
         this.pandaProxyService.getABuyer(buyerId).subscribe(buyer => {
           this.buyer = buyer;
           this.fetchCartItems((buyer as any).cart);
+          this.fetchFavListItems((buyer as any).favList);
         });
       } else {
         console.log("NO BUYER");
@@ -52,6 +54,15 @@ export class AppComponent {
       });
     });
   }
+
+  fetchFavListItems(favList: string[]) {
+    favList.forEach((shoeID: string) => {
+      this.pandaProxyService.getAShoe(shoeID).subscribe(shoe => {
+        this.favList.push(shoe); // push to favList, not cart
+      });
+    });
+  }
+
 
   removeFromCart(shoeId: string) {
     this.pandaProxyService.removeFromCart(shoeId).subscribe(

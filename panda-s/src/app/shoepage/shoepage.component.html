@@ -29,6 +29,11 @@
             <button class="btn btn-primary">Buy Now</button>
             <button class="btn btn-secondary" (click)="addToCart(shoe?.shoeId)">Add to Cart</button>
           </div>
+
+          <div class="col-6">
+            <button class="btn btn-primary">Add To Fav</button>
+            <button class="btn btn-secondary" (click)="(shoe?.shoeId)">Add to Cart</button>
+          </div>
           <div class="col-6">
             <a [routerLink]="['/storefront', shoe?.storeId]" class="btn btn-success btn-sm">See more shoes from {{storefront?.storeName}} ></a>
           </div>
