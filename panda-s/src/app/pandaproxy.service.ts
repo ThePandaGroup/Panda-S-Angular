@@ -72,4 +72,13 @@ export class PandaproxyService {
     
 
 
+    updateFavList(shoeId: string) {
+      console.log('updating favorite list to....');
+      return this.httpClient.post(this.hostUrl + 'app/buyers/favList/' + shoeId, {});
+    }
+    removeFromFav(shoeId: string): Observable<any> {
+      console.log('removing from favorite list');
+      return this.httpClient.delete(this.hostUrl + '/app/buyers/favList/' + shoeId, { withCredentials: true });
+    }
+
 }
